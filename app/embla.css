@@ -1,0 +1,58 @@
+.embla {
+  --slide-spacing: 1rem;
+  --slide-size: 100%;
+  --slide-height: 20rem;
+  padding: 0 1.6rem;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+  position: relative;
+}
+.embla__dot {
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.embla__dots {
+  padding-block: 1rem;
+  bottom: 1.6rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.embla__dot {
+  width: calc(70% / 5);
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+.embla__dot:after {
+  background: #ccc;
+  border-radius: 0.2rem;
+  width: 100%;
+  height: 0.3rem;
+  content: '';
+}
+.embla__dot--selected:after {
+  background: linear-gradient(45deg, rgb(47, 112, 193), rgb(116, 97, 195));
+}
